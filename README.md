@@ -57,7 +57,7 @@ class c1
     private string $from_planet = 'Earth';
 }
 ```
-### 7. Modifying value in a foreach loop
+#### 7. Modifying value in a foreach loop
 
 In order to modify the value in the foreach loop the value must be passed by reference:
 ```php

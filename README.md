@@ -31,7 +31,7 @@ if ($object::STATUS_ACTIVE === $object->object_status) {
 ```
 
 #### 3. Never use short tags.
-Always use <?php or <?=.
+Always use **<?php** or **<?=**.
 
 #### 4. Never put a closing ?> tag in the file. 
 If there is closing tag and by mistake and there is a space or a tab after it this will trigger odd errors about "headers sent".

@@ -53,7 +53,7 @@ Typed properties are available since PHP 7.4. Whenever possible initialize them:
 class c1
 {
     private string $name;
-    private ?int $age;
+    private ?int $age = NULL;
     private string $from_planet = 'Earth';
 }
 ```

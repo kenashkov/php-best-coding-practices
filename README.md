@@ -173,7 +173,7 @@ This way even if someone adds a an else or an **elseif** the variable will be de
 The code should be always thought of and planned so that there is a default value (this is the value that is set in the **else** block or in the above case - predefined before the **if**).
 If this is not possible and it is preferred to have an undefined variable error than a wrong value then it is acceptable to have the variable defined in each else/if.
 
-### 16. String comparison
+#### 14. String comparison
 
 The comparison of strings should be always done by converting both of them to lower case (unless the case matters).
 This is valid even for hardcoded strings (because a hardcoded string like **'false'** may get converted to **'FALSE'** during code replace or refactoring be it manual or automatic.
@@ -188,7 +188,7 @@ if ( strtolower($node) === strtolower('true') ) {
 }
 ```
 
-### 17. Closures
+#### 15. Closures
 
 If the closure will not need to use $this it should be declared as static one:
 ```php

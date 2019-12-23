@@ -198,4 +198,34 @@ $Function = static function() {
 ```
 This is done so that it is avoided having one more reference to $this. 
 Tthis may prevent object destruction based on the scope as this reference may become a circular reference if this closure is assigned to an object property.
-In this case it will be collected when the GC is triggered.
+In this case it will be collected when the GC is triggered instead of the object be collected when the local automatic reference to it is destroyed.
+
+#### 16. Never use global constants
+
+Always use namespaced constants instead of global constants to avoid collisions when multiple libraries are included.
+
+#### 17. Never use global variables
+Always avoid using global variables as this may lead to a collision when using multiple pieces of software.
+Even when just starting your framework like:
+```php
+//some require()s
+//some app initialization
+$App = new My\Framework\App();
+$App->initialize();
+//other app initialization
+```
+Instead use IIFE (Immediately-invoked Function Expression)
+```php
+(function(){
+    //some require()s
+    //some app initialization
+    $App = new My\Framework\App();
+    $App->initialize();
+})();
+```
+An alternative could be:
+```php
+require('app.php');
+(new App())->initialize();
+```
+But this is not safe if the app.php file contains global variables.
